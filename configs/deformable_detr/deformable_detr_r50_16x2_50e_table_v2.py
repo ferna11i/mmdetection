@@ -1,3 +1,7 @@
+""""
+Version 2 has a longer training epoch and steps than v1 or deformable_detr_r50_16x2_50e_table.py file
+""""
+
 _base_ = [
     '../_base_/datasets/table_detection.py', '../_base_/default_runtime.py'
 ]
