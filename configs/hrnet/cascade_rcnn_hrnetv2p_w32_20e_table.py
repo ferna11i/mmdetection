@@ -49,8 +49,18 @@ lr_config = dict(
     warmup_ratio=1.0 / 3,
     step=[16, 19])
 # lr_config = dict(step=[20, 35])
-runner = dict(type='EpochBasedRunner', max_epochs=30)
+runner = dict(type='EpochBasedRunner', max_epochs=80)
 
 
 work_dir = '/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/workdir_1class/'
-load_from = "/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/johan/AlternateModels/weights/cascade_rcnn_hrnetv2p_w32_20e_coco.pth"
+
+# Training with COCO weights
+# load_from = "/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/johan/AlternateModels/weights/cascade_rcnn_hrnetv2p_w32_20e_coco.pth"
+
+# Original CascadeTabNet weights
+# load_from = "/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/johan/AlternateModels/weights/epoch_24_updated.pth"
+load_from = None
+resume_from = "/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/johan/AlternateModels/weights/cascadetabnet_epoch_24_min_prototype0.pth"
+
+# # Train from General dataset weights
+# load_from = "/home/jovyan/dev-hydra-module-tabular-1-gpu-vol-1/workdir_1class/cascadetabnet_epoch_69_prototype2.pth"

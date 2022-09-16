@@ -1,5 +1,5 @@
 _base_ = [
-    '../_base_/datasets/table_detection.py', '../_base_/default_runtime.py'
+    '../_base_/datasets/table_detection_without_mask.py', '../_base_/default_runtime.py'
 ]
 model = dict(
     type='DeformableDETR',
@@ -80,7 +80,10 @@ model = dict(
             cls_cost=dict(type='FocalLossCost', weight=2.0),
             reg_cost=dict(type='BBoxL1Cost', weight=5.0, box_format='xywh'),
             iou_cost=dict(type='IoUCost', iou_mode='giou', weight=2.0))),
-    test_cfg=dict(max_per_img=5))
+    # Changed max_per_img from 100 and added score_thr : Johan
+    test_cfg=dict(max_per_img=10,
+                  score_thr=0.5)
+)
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)

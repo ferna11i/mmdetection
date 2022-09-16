@@ -184,6 +184,10 @@ def oid_challenge_classes():
         'Pressure cooker', 'Ring binder', 'Beaker', 'Torch', 'Winter melon'
     ]
 
+def table_detection_classes():
+    return [
+        'table'
+    ]
 
 def oid_v6_classes():
     return [
@@ -311,7 +315,8 @@ dataset_aliases = {
     'wider_face': ['WIDERFaceDataset', 'wider_face', 'WIDERFace'],
     'cityscapes': ['cityscapes'],
     'oid_challenge': ['oid_challenge', 'openimages_challenge'],
-    'oid_v6': ['oid_v6', 'openimages_v6']
+    'oid_v6': ['oid_v6', 'openimages_v6'],
+    'table_detection': ['table']
 }
 
 

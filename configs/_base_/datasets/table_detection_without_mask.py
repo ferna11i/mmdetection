@@ -29,7 +29,7 @@ test_pipeline = [
         ])
 ]
 
-## ICDAR 2019
+# # ICDAR 2019
 # data = dict(
 #     samples_per_gpu=2,
 #     workers_per_gpu=0,
@@ -50,25 +50,48 @@ test_pipeline = [
 #         pipeline=test_pipeline))
 
 
-## SEDAR
+# ## SEDAR
+# data = dict(
+#     samples_per_gpu=2,
+#     workers_per_gpu=0,
+#     train=dict(
+#         type=dataset_type,
+#         ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_train.json',
+#         img_prefix=data_root + 'niranjan/sedar/positive/train/',
+#         pipeline=train_pipeline),
+#     val=dict(
+#         type=dataset_type,
+#         ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_test.json',
+#         img_prefix=data_root + 'niranjan/sedar/positive/test/',
+#         pipeline=test_pipeline),
+#     test=dict(
+#         type=dataset_type,
+#         ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_test.json',
+#         img_prefix=data_root + 'niranjan/sedar/positive/test/',
+#         pipeline=test_pipeline))
+
+
+
+## Combined + IC 19
 data = dict(
     samples_per_gpu=2,
     workers_per_gpu=0,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_train.json',
-        img_prefix=data_root + 'niranjan/sedar/positive/train/',
+        ann_file=data_root + 'tabular/combined_ic19/annotations/combined_ic19_train.json',
+        img_prefix=data_root + 'tabular/combined_ic19/images/train/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_test.json',
-        img_prefix=data_root + 'niranjan/sedar/positive/test/',
+        ann_file=data_root + 'tabular/combined_ic19/annotations/combined_ic19_test.json',
+        img_prefix=data_root + 'tabular/combined_ic19/images/test/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'niranjan/sedar/positive/sedar_positive_test.json',
-        img_prefix=data_root + 'niranjan/sedar/positive/test/',
+        ann_file=data_root + 'tabular/combined_ic19/annotations/combined_ic19_test.json',
+        img_prefix=data_root + 'tabular/combined_ic19/images/test/',
         pipeline=test_pipeline))
+
 
 
 evaluation = dict(interval=1, metric='bbox')
